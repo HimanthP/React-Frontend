@@ -1,1 +1,612 @@
-[]
+[
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "timestamp": "2026-06-09T04:45:41.178Z",
+    "scores": {
+      "functionalTests": 83.3,
+      "codeQuality": 90,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 80,
+      "aiReview": 88
+    },
+    "totalScore": 87.855,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 83.3,
+      "passed": false,
+      "totalTests": 6,
+      "passedTests": 5,
+      "failedTests": 1,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskCard"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskCard should render title, description, and priority",
+              "status": "failed",
+              "title": "should render title, description, and priority",
+              "duration": 16,
+              "failureMessages": [
+                "Unable to find an element with the text: /Priority: High/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<article\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<h2>\u001b[39m\n        \u001b[0mTest Task\u001b[0m\n      \u001b[36m</h2>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mTest description\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<p>\u001b[39m\n        \u001b[0mpriority: \u001b[0m\n        \u001b[0mHigh\u001b[0m\n      \u001b[36m</p>\u001b[39m\n    \u001b[36m</article>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+              ],
+              "location": {
+                "line": 37,
+                "column": 19
+              }
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskCard"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskCard should use article with id task-card",
+              "status": "passed",
+              "title": "should use article with id task-card",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskCard"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskCard should use semantic HTML (h2 for title)",
+              "status": "passed",
+              "title": "should use semantic HTML (h2 for title)",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskList"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskList should render 3 TaskCards when no tasks prop",
+              "status": "passed",
+              "title": "should render 3 TaskCards when no tasks prop",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskList"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskList should have section with id task-list",
+              "status": "passed",
+              "title": "should have section with id task-list",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: Static Task Display",
+                "TaskList"
+              ],
+              "fullName": " Challenge 01: Static Task Display TaskList should display three different tasks",
+              "status": "passed",
+              "title": "should display three different tasks",
+              "duration": 5,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1780980342201,
+          "endTime": 1780980342229,
+          "status": "failed",
+          "message": "",
+          "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx"
+        }
+      ],
+      "error": "Command failed: npm test -- /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx --run --reporter=json"
+    },
+    "lintResults": {
+      "score": 90,
+      "passed": false,
+      "totalIssues": 1,
+      "errors": 1,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskCard.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskList.tsx",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "severity": 2,
+              "message": "'_props' is defined but never used.",
+              "line": 22,
+              "column": 34,
+              "nodeType": "Identifier",
+              "messageId": "unusedVar",
+              "endLine": 22,
+              "endColumn": 55
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import TaskCard from \"./TaskCard\"\n\nexport interface Task {\n  id: string | number\n  title: string\n  description: string\n  priority: string\n  completed: boolean\n  category?: string\n  tags?: string[]\n  dueDate?: string | number\n}\n\ninterface TaskListProps {\n  tasks?: Task[]\n  countText?: string\n  onToggle?: (id: string | number) => void\n  onDelete?: (id: string | number) => void\n  linkToTaskDetail?: boolean\n}\n\nexport default function TaskList(_props: TaskListProps) {\n  return <section id=\"task-list\" >\n    <TaskCard\n        title=\"Task One\"\n        description=\"First hardcoded task\"\n        priority=\"High\"\n      />\n\n      <TaskCard\n        title=\"Task Two\"\n        description=\"Second hardcoded task\"\n        priority=\"Medium\"\n      />\n\n      <TaskCard\n        title=\"Task Three\"\n        description=\"Third hardcoded task\"\n        priority=\"Low\"\n      />\n    </section>\n}",
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/TaskCard.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskList.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 80,
+      "totalTests": 5,
+      "passedTests": 4,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-01.spec.ts",
+          "file": "challenge-01.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 01: Static Task Display - E2E",
+              "file": "challenge-01.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list on the page",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 339,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-09T04:45:44.954Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-46da488bdf18f28a4e06",
+                  "file": "challenge-01.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should display 3 tasks",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 101,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-09T04:45:45.864Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-75e1df148f226548dd88",
+                  "file": "challenge-01.spec.ts",
+                  "line": 13,
+                  "column": 3
+                },
+                {
+                  "title": "should display task titles",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 111,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-09T04:45:45.970Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-bdfd9e68ed1d14ec988e",
+                  "file": "challenge-01.spec.ts",
+                  "line": 18,
+                  "column": 3
+                },
+                {
+                  "title": "should display task descriptions and priority",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5146,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                              "column": 52,
+                              "line": 26
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m   test(\u001b[32m'should display task descriptions and priority'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/First hardcoded task/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/Priority: High/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m\n \u001b[90m 29 |\u001b[39m   test(\u001b[32m'should have proper layout'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                                "column": 52,
+                                "line": 26
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n\n  24 |   test('should display task descriptions and priority', async ({ page }) => {\n  25 |     await expect(page.getByText(/First hardcoded task/)).toBeVisible();\n> 26 |     await expect(page.getByText(/Priority: High/)).toBeVisible();\n     |                                                    ^\n  27 |   });\n  28 |\n  29 |   test('should have proper layout', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-09T04:45:46.088Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                            "column": 52,
+                            "line": 26
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5194,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                              "column": 52,
+                              "line": 26
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m   test(\u001b[32m'should display task descriptions and priority'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/First hardcoded task/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/Priority: High/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m\n \u001b[90m 29 |\u001b[39m   test(\u001b[32m'should have proper layout'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                                "column": 52,
+                                "line": 26
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n\n  24 |   test('should display task descriptions and priority', async ({ page }) => {\n  25 |     await expect(page.getByText(/First hardcoded task/)).toBeVisible();\n> 26 |     await expect(page.getByText(/Priority: High/)).toBeVisible();\n     |                                                    ^\n  27 |   });\n  28 |\n  29 |   test('should have proper layout', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-09T04:45:51.680Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium-retry1/error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                            "column": 52,
+                            "line": 26
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5176,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                              "column": 52,
+                              "line": 26
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 24 |\u001b[39m   test(\u001b[32m'should display task descriptions and priority'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/First hardcoded task/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/Priority: High/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 28 |\u001b[39m\n \u001b[90m 29 |\u001b[39m   test(\u001b[32m'should have proper layout'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                                "column": 52,
+                                "line": 26
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/Priority: High/)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/Priority: High/)\u001b[22m\n\n\n  24 |   test('should display task descriptions and priority', async ({ page }) => {\n  25 |     await expect(page.getByText(/First hardcoded task/)).toBeVisible();\n> 26 |     await expect(page.getByText(/Priority: High/)).toBeVisible();\n     |                                                    ^\n  27 |   });\n  28 |\n  29 |   test('should have proper layout', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts:26:52"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-09T04:45:57.417Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium-retry2/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-01-Challenge-01--78ead-k-descriptions-and-priority-chromium-retry2/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-01.spec.ts",
+                            "column": 52,
+                            "line": 26
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-d537fa52bda8f84d27a7",
+                  "file": "challenge-01.spec.ts",
+                  "line": 24,
+                  "column": 3
+                },
+                {
+                  "title": "should have proper layout",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 138,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-09T04:46:03.128Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-877d341f9e2e19f38eaf",
+                  "file": "challenge-01.spec.ts",
+                  "line": 29,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Exit 1",
+      "passed": false
+    },
+    "aiReviewResults": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-09T04:46:03.390Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props is a good practice for ensuring type safety and maintainability.",
+        "The code is relatively free of errors and warnings."
+      ],
+      "improvements": [
+        "In the `TaskCard` component, the `completed` and `onToggle` props are not used. Consider removing them to avoid confusion and potential errors.",
+        "In the `TaskList` component, the `tasks` prop is not used. Consider removing it to avoid confusion and potential errors.",
+        "Consider adding more comments to explain the purpose and behavior of each component and function. This will make the code easier to understand and maintain."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it even better. With a few tweaks, this code can be even more maintainable and efficient."
+    },
+    "aiResults": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-09T04:46:03.390Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and props is a good practice for ensuring type safety and maintainability.",
+        "The code is relatively free of errors and warnings."
+      ],
+      "improvements": [
+        "In the `TaskCard` component, the `completed` and `onToggle` props are not used. Consider removing them to avoid confusion and potential errors.",
+        "In the `TaskList` component, the `tasks` prop is not used. Consider removing it to avoid confusion and potential errors.",
+        "Consider adding more comments to explain the purpose and behavior of each component and function. This will make the code easier to understand and maintain."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and follows good practices, but there are some minor improvements that can be made to make it even better. With a few tweaks, this code can be even more maintainable and efficient."
+    }
+  }
+]
