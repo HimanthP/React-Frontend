@@ -612,7 +612,7 @@
   {
     "challengeId": "02-dynamic-task-rendering",
     "challengeName": "Dynamic Task Rendering",
-    "timestamp": "2026-06-09T05:34:35.113Z",
+    "timestamp": "2026-06-10T10:14:52.471Z",
     "scores": {
       "functionalTests": 75,
       "codeQuality": 100,
@@ -642,7 +642,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should render tasks from tasks prop",
               "status": "passed",
               "title": "should render tasks from tasks prop",
-              "duration": 23,
+              "duration": 22,
               "failureMessages": []
             },
             {
@@ -653,7 +653,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should display task count with id task-count",
               "status": "failed",
               "title": "should display task count with id task-count",
-              "duration": 9,
+              "duration": 7,
               "failureMessages": [
                 "Unable to find an element with the text: 5 Tasks. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<section\u001b[39m\n      \u001b[33mid\u001b[39m=\u001b[32m\"task-list\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mA\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD1\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mpriority: \u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mB\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD2\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mpriority: \u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mC\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD3\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mpriority: \u001b[0m\n          \u001b[0mLow\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mD\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD4\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mpriority: \u001b[0m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n      \u001b[36m<article\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-card\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h2>\u001b[39m\n          \u001b[0mE\u001b[0m\n        \u001b[36m</h2>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mD5\u001b[0m\n        \u001b[36m</p>\u001b[39m\n        \u001b[36m<p>\u001b[39m\n          \u001b[0mpriority: \u001b[0m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</article>\u001b[39m\n    \u001b[36m</section>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
               ],
@@ -670,7 +670,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use unique keys when mapping (no duplicate keys)",
               "status": "passed",
               "title": "should use unique keys when mapping (no duplicate keys)",
-              "duration": 2,
+              "duration": 1,
               "failureMessages": []
             },
             {
@@ -681,12 +681,12 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use map in TaskList",
               "status": "passed",
               "title": "should use map in TaskList",
-              "duration": 0,
+              "duration": 1,
               "failureMessages": []
             }
           ],
-          "startTime": 1780983276151,
-          "endTime": 1780983276185,
+          "startTime": 1781086493510,
+          "endTime": 1781086493541,
           "status": "failed",
           "message": "",
           "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-02.test.tsx"
@@ -852,12 +852,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 302,
+                          "duration": 321,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-09T05:34:38.941Z",
+                          "startTime": "2026-06-10T10:14:56.272Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -886,12 +886,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 101,
+                          "duration": 99,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-09T05:34:40.120Z",
+                          "startTime": "2026-06-10T10:14:57.173Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -920,12 +920,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 112,
+                          "duration": 111,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-09T05:34:40.226Z",
+                          "startTime": "2026-06-10T10:14:57.277Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -954,12 +954,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 111,
+                          "duration": 94,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-09T05:34:40.344Z",
+                          "startTime": "2026-06-10T10:14:57.394Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -988,12 +988,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 111,
+                          "duration": 95,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-09T05:34:40.460Z",
+                          "startTime": "2026-06-10T10:14:57.494Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -1015,41 +1015,41 @@
     },
     "aiReviewResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-09T05:34:40.618Z",
+      "timestamp": "2026-06-10T10:14:57.631Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
         "The use of TypeScript and functional components is a good practice.",
-        "The code is well-documented with clear and concise comments."
+        "The code is well-commented, making it easier to understand the logic behind it."
       ],
       "improvements": [
-        "The `TaskList` component can be improved by adding a loading state when the `tasks` prop is empty.",
-        "The `TaskCard` component can be improved by adding a `completed` prop to display the task completion status.",
-        "The code can benefit from the use of a linter to enforce coding standards and catch potential errors."
+        "The `TaskList` component can be improved by adding a check for an empty `tasks` array before rendering the list. This will prevent a potential error when the array is empty.",
+        "The `TaskCard` component can be improved by adding a check for the `completed` prop before rendering the completed status. This will prevent a potential error when the prop is not provided.",
+        "The `TaskApp` component can be improved by adding a check for the `countFormat` prop before rendering the task count. This will prevent a potential error when the prop is not provided."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, with good use of TypeScript and functional components. However, there are some areas for improvement, such as adding a loading state to the `TaskList` component and using a linter to enforce coding standards."
+      "overall": "The code is well-structured and maintainable, with good use of TypeScript and functional components. However, there are a few areas that can be improved to make the code more robust and error-free."
     },
     "aiResults": {
       "challengeId": "02-dynamic-task-rendering",
-      "timestamp": "2026-06-09T05:34:40.618Z",
+      "timestamp": "2026-06-10T10:14:57.631Z",
       "score": 88,
       "feedback": [],
       "strengths": [
-        "The code is well-structured and follows a consistent naming convention.",
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
         "The use of TypeScript and functional components is a good practice.",
-        "The code is well-documented with clear and concise comments."
+        "The code is well-commented, making it easier to understand the logic behind it."
       ],
       "improvements": [
-        "The `TaskList` component can be improved by adding a loading state when the `tasks` prop is empty.",
-        "The `TaskCard` component can be improved by adding a `completed` prop to display the task completion status.",
-        "The code can benefit from the use of a linter to enforce coding standards and catch potential errors."
+        "The `TaskList` component can be improved by adding a check for an empty `tasks` array before rendering the list. This will prevent a potential error when the array is empty.",
+        "The `TaskCard` component can be improved by adding a check for the `completed` prop before rendering the completed status. This will prevent a potential error when the prop is not provided.",
+        "The `TaskApp` component can be improved by adding a check for the `countFormat` prop before rendering the task count. This will prevent a potential error when the prop is not provided."
       ],
       "readability": 85,
       "maintainability": 90,
-      "overall": "The code is well-structured and maintainable, with good use of TypeScript and functional components. However, there are some areas for improvement, such as adding a loading state to the `TaskList` component and using a linter to enforce coding standards."
+      "overall": "The code is well-structured and maintainable, with good use of TypeScript and functional components. However, there are a few areas that can be improved to make the code more robust and error-free."
     }
   }
 ]
