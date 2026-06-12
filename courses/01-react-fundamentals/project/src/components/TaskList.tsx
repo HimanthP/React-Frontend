@@ -6,9 +6,6 @@ export interface Task {
   description: string
   priority: string
   completed: boolean
-  category?: string
-  tags?: string[]
-  dueDate?: string | number
 }
 
 interface TaskListProps {
@@ -16,44 +13,54 @@ interface TaskListProps {
   countText?: string
   onToggle?: (id: string | number) => void
   onDelete?: (id: string | number) => void
-  linkToTaskDetail?: boolean
 }
 
-const HARDCODED_TASKS: Task[] = [
+const defaultTasks: Task[] = [
   {
     id: 1,
     title: "Task One",
-    description: "First hardcoded task",
-    priority: "High",
+    description: "Description One",
+    priority: "Low",
     completed: false,
   },
   {
     id: 2,
     title: "Task Two",
-    description: "Second hardcoded task",
+    description: "Description Two",
     priority: "Medium",
     completed: false,
   },
   {
     id: 3,
     title: "Task Three",
-    description: "Third hardcoded task",
-    priority: "Low",
+    description: "Description Three",
+    priority: "High",
     completed: false,
   },
 ]
 
-export default function TaskList({ tasks }: TaskListProps) {
-  const list = tasks ?? HARDCODED_TASKS
-
+export default function TaskList({
+  tasks = defaultTasks,
+  countText,
+  onToggle,
+  onDelete,
+}: TaskListProps) {
   return (
     <section id="task-list">
-      {list.map((task) => (
+      <h2 id="task-count">
+        {countText ?? `${tasks.length} Tasks`}
+      </h2>
+
+      {tasks.map((task) => (
         <TaskCard
           key={task.id}
+          id={task.id}
           title={task.title}
           description={task.description}
           priority={task.priority}
+          completed={task.completed}
+          onToggle={onToggle}
+          onDelete={onDelete}
         />
       ))}
     </section>
