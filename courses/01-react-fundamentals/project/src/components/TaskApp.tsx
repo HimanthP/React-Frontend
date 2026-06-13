@@ -1,65 +1,85 @@
-import type { Dispatch, SetStateAction } from 'react'
-import TaskList, { type Task } from './TaskList'
-import TaskForm from './TaskForm'
+import { useState } from "react";
+import TaskList from "./TaskList";
+import TaskForm from "./TaskForm";
+import FilterBar from "./FilterBar";
+import type { Task } from "./TaskList";
 
 interface TaskAppProps {
-  tasks?: Task[]
-  setTasks?: Dispatch<SetStateAction<Task[]>>
-  dispatch?: (action: { type: string; payload?: unknown }) => void
-  showForm?: boolean
-  countFormat?: string
-  showFilterBar?: boolean
-  showStatsPanel?: boolean
-  onDelete?: (id: string | number) => void
-  linkToTaskDetail?: boolean
+  tasks: Task[];
+  setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;
+  showForm?: boolean;
+  onDelete?: (id: string | number) => void;
+  showFilterBar?: boolean;
 }
 
-export default function TaskApp(props: TaskAppProps) {
-  const tasks = props.tasks ?? []
+export default function TaskApp({
+  tasks,
+  setTasks,
+  showForm,
+  onDelete,
+  showFilterBar,
+}: TaskAppProps) {
+  const [filter, setFilter] = useState<
+    "all" | "active" | "completed"
+  >("all");
 
-  const completedCount = tasks.filter(
-    (task) => task.completed
-  ).length
-
-  const taskCountText =
-    `${completedCount} of ${tasks.length} completed`
+  function handleAddTask(task: Task) {
+    if (setTasks) {
+      setTasks((prev) => [...prev, task]);
+    }
+  }
 
   function handleToggle(id: string | number) {
-    if (props.setTasks) {
-      props.setTasks((prevTasks) =>
-        prevTasks.map((task) =>
-          task.id === id
-            ? {
-                ...task,
-                completed: !task.completed,
-              }
-            : task
-        )
+    if (!setTasks) return;
+
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task
       )
-    }
+    );
   }
 
-  function handleAddTask(newTask: Task) {
-    if (props.setTasks) {
-      props.setTasks((prevTasks) => [
-        ...prevTasks,
-        newTask,
-      ])
-    }
-  }
+  const filteredTasks =
+    filter === "all"
+      ? tasks
+      : filter === "active"
+      ? tasks.filter((t) => !t.completed)
+      : tasks.filter((t) => t.completed);
 
   return (
-    <main>
-      {props.showForm && (
+    <div>
+      {showForm && (
         <TaskForm onAddTask={handleAddTask} />
       )}
 
-      <TaskList
-        tasks={tasks}
-        countText={taskCountText}
-        onToggle={handleToggle}
-        onDelete={props.onDelete}
-      />
-    </main>
-  )
+      {showFilterBar && (
+        <FilterBar
+          filter={filter}
+          onFilterChange={setFilter}
+        />
+      )}
+
+      <div id="task-count">
+        Showing {filteredTasks.length} of {tasks.length} tasks
+      </div>
+
+      {filteredTasks.length === 0 ? (
+        <div id="filter-empty-message">
+          No tasks match this filter
+        </div>
+      ) : (
+        <TaskList
+          tasks={filteredTasks}
+          onToggle={handleToggle}
+          onDelete={onDelete}
+          countText={`Showing ${filteredTasks.length} of ${tasks.length} tasks`}
+        />
+      )}
+    </div>
+  );
 }
