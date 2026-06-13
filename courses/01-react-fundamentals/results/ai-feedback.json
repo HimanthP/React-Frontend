@@ -136,5 +136,28 @@
       "maintainability": 90,
       "overall": "The code is well-organized and follows best practices for React and TypeScript development. With a few minor improvements, it can be even more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "07-priority-based-sorting",
+    "challengeName": "Priority-Based Sorting",
+    "aiReview": {
+      "challengeId": "07-priority-based-sorting",
+      "timestamp": "2026-06-13T17:15:38.635Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components makes the code more maintainable and efficient.",
+        "The implementation of the sorting logic is clear and concise, with a good use of object literals and function expressions."
+      ],
+      "improvements": [
+        "The `FilterBar` component could benefit from a more robust implementation of the `onFilterChange` and `onSortChange` handlers, which are currently using `useState` directly. Consider using a more centralized state management approach, such as Redux or MobX.",
+        "The `TaskApp` component has a lot of responsibility, handling both the rendering of the task list and the management of the filter and sort state. Consider breaking this down into smaller, more focused components to improve maintainability.",
+        "The use of magic strings in the `priorityValue` object could be avoided by using an enum or a more robust data structure. This would make the code more maintainable and easier to understand."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good use of TypeScript and functional components. However, there are some areas for improvement, particularly in the implementation of the filter and sort state management and the use of magic strings in the `priorityValue` object."
+    }
   }
 ]
