@@ -2866,5 +2866,618 @@
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, with a good use of TypeScript and functional components. However, there are some areas for improvement, particularly in the implementation of the filter and sort state management and the use of magic strings in the `priorityValue` object."
     }
+  },
+  {
+    "challengeId": "08-task-editing",
+    "challengeName": "Task Editing",
+    "timestamp": "2026-06-15T05:23:41.907Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 83.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 08: Task Editing"
+              ],
+              "fullName": " Challenge 08: Task Editing TaskCard should render title and description",
+              "status": "passed",
+              "title": "TaskCard should render title and description",
+              "duration": 14,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 08: Task Editing"
+              ],
+              "fullName": " Challenge 08: Task Editing TaskList should pass tasks to TaskCard",
+              "status": "passed",
+              "title": "TaskList should pass tasks to TaskCard",
+              "duration": 4,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 08: Task Editing"
+              ],
+              "fullName": " Challenge 08: Task Editing TaskList should have id=\"task-list\"",
+              "status": "passed",
+              "title": "TaskList should have id=\"task-list\"",
+              "duration": 1,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1781501022926,
+          "endTime": 1781501022945,
+          "status": "passed",
+          "message": "",
+          "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-08.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/App.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskApp.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskCard.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskList.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/TaskCard.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskList.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "props"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "totalTests": 2,
+      "passedTests": 0,
+      "failedTests": 2,
+      "details": [
+        {
+          "title": "challenge-08.spec.ts",
+          "file": "challenge-08.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 08: Task Editing - E2E",
+              "file": "challenge-08.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5306,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-15T05:23:45.724Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5215,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-15T05:23:51.980Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium-retry1/error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5132,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-15T05:23:57.758Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium-retry2/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--0dbd2-2E-should-display-task-list-chromium-retry2/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "cc4b1dfc0eb6cfe77aae-cb64637ff3c6f55e28d3",
+                  "file": "challenge-08.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should display task form when showForm is true",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5128,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 47,
+                              "line": 13
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-title'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 47,
+                                "line": 13
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n> 13 |     await expect(page.locator('#task-title')).toBeVisible();\n     |                                               ^\n  14 |   });\n  15 | });\n  16 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-15T05:24:03.412Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 47,
+                            "line": 13
+                          }
+                        },
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5163,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 47,
+                              "line": 13
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-title'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 47,
+                                "line": 13
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n> 13 |     await expect(page.locator('#task-title')).toBeVisible();\n     |                                               ^\n  14 |   });\n  15 | });\n  16 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-15T05:24:09.060Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium-retry1/error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 47,
+                            "line": 13
+                          }
+                        },
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5152,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                              "column": 47,
+                              "line": 13
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m\n \u001b[90m 12 |\u001b[39m   test(\u001b[32m'should display task form when showForm is true'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-title'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 16 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                                "column": 47,
+                                "line": 13
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-title')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-title')\u001b[22m\n\n\n  11 |\n  12 |   test('should display task form when showForm is true', async ({ page }) => {\n> 13 |     await expect(page.locator('#task-title')).toBeVisible();\n     |                                               ^\n  14 |   });\n  15 | });\n  16 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts:13:47"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-15T05:24:14.745Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium-retry2/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-08-Challenge-08--6267d--form-when-showForm-is-true-chromium-retry2/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-08.spec.ts",
+                            "column": 47,
+                            "line": 13
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "cc4b1dfc0eb6cfe77aae-28af603b43d105b62584",
+                  "file": "challenge-08.spec.ts",
+                  "line": 12,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Exit 1",
+      "passed": false
+    },
+    "aiReviewResults": {
+      "challengeId": "08-task-editing",
+      "timestamp": "2026-06-15T05:24:20.031Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-organized and follows a consistent structure.",
+        "The use of TypeScript and functional components makes the code maintainable and scalable.",
+        "The code includes clear and concise comments, making it easier to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive. For example, `handleSave` could be renamed to `saveTask`.",
+        "The `TaskCard` component has a lot of props. Consider breaking it down into smaller, more focused components.",
+        "The `TaskApp` component has a lot of state and props. Consider using a more modular approach, such as using a reducer or a separate state management library."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements in terms of naming conventions and component organization."
+    },
+    "aiResults": {
+      "challengeId": "08-task-editing",
+      "timestamp": "2026-06-15T05:24:20.031Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-organized and follows a consistent structure.",
+        "The use of TypeScript and functional components makes the code maintainable and scalable.",
+        "The code includes clear and concise comments, making it easier to understand the functionality."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive. For example, `handleSave` could be renamed to `saveTask`.",
+        "The `TaskCard` component has a lot of props. Consider breaking it down into smaller, more focused components.",
+        "The `TaskApp` component has a lot of state and props. Consider using a more modular approach, such as using a reducer or a separate state management library."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements in terms of naming conventions and component organization."
+    }
   }
 ]
