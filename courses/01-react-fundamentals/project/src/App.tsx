@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChallengeList from "./components/ChallengeList";
 import TaskList from "./components/TaskList";
@@ -46,8 +46,31 @@ const INITIAL_TASKS: Task[] = [
   },
 ];
 
+const STORAGE_KEY = "task-app-tasks";
+
 function AppContent() {
-  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    try {
+      const storedTasks = localStorage.getItem(STORAGE_KEY);
+
+      if (storedTasks) {
+        const parsedTasks: Task[] = JSON.parse(storedTasks);
+
+        if (Array.isArray(parsedTasks)) {
+          return parsedTasks;
+        }
+      }
+    } catch {}
+
+    return INITIAL_TASKS;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(tasks)
+    );
+  }, [tasks]);
 
   const handleDelete = (id: string | number) => {
     setTasks((prev) => prev.filter((t) => t.id !== id));
@@ -124,6 +147,30 @@ function AppContent() {
 
             <Route
               path="/challenge/07-priority-based-sorting"
+              element={
+                <TaskApp
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  showForm
+                  showFilterBar
+                />
+              }
+            />
+
+            <Route
+              path="/challenge/08-task-editing"
+              element={
+                <TaskApp
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  showForm
+                  showFilterBar
+                />
+              }
+            />
+
+            <Route
+              path="/challenge/09-search-functionality"
               element={
                 <TaskApp
                   tasks={tasks}
