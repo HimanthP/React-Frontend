@@ -228,5 +228,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and follows good practices. However, there are a few areas that can be improved to make the code more robust and efficient."
     }
+  },
+  {
+    "challengeId": "11-useeffect-debounced-search",
+    "challengeName": "useEffect - Debounced Search",
+    "aiReview": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:13:38.456Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components promotes type safety and reusability.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each component and function."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive, such as `handleAddTask` and `handleToggle`. Consider using more descriptive names like `addTaskToState` and `toggleTaskCompletion`.",
+        "The `useEffect` hook in `TaskApp` could be refactored to reduce its complexity. Consider breaking it down into smaller, more manageable functions.",
+        "The `debouncedSearchText` state could be removed in favor of using a more functional approach, such as using the `useDebounce` hook from a library like `react-use`."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a clear separation of concerns between components. However, there are some areas for improvement, such as more descriptive function names and a more functional approach to debouncing the search input."
+    }
   }
 ]

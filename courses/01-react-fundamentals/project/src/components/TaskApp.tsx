@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
@@ -29,9 +29,31 @@ export default function TaskApp({
   const [searchText, setSearchText] =
     useState("");
 
+  // Challenge 11
+  const [debouncedSearchText, setDebouncedSearchText] =
+    useState("");
+
+  const [isSearching, setIsSearching] =
+    useState(false);
+
   const [editingId, setEditingId] = useState<
     string | number | null
   >(null);
+
+  useEffect(() => {
+    if (searchText !== debouncedSearchText) {
+      setIsSearching(true);
+    }
+
+    const timeoutId = setTimeout(() => {
+      setDebouncedSearchText(searchText);
+      setIsSearching(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [searchText]);
 
   function handleAddTask(task: Task) {
     if (setTasks) {
@@ -90,11 +112,11 @@ export default function TaskApp({
       ? tasks.filter((t) => !t.completed)
       : tasks.filter((t) => t.completed);
 
-  // Search
+  // Search (using debounced value)
   const searchedTasks =
     statusFiltered.filter((task) => {
       const search =
-        searchText.toLowerCase();
+        debouncedSearchText.toLowerCase();
 
       return (
         task.title
@@ -161,6 +183,7 @@ export default function TaskApp({
           onClearSearch={() =>
             setSearchText("")
           }
+          isSearching={isSearching}
         />
       )}
 

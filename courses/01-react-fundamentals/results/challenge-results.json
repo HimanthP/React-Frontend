@@ -4599,5 +4599,462 @@
       "maintainability": 90,
       "overall": "The code is well-structured, maintainable, and follows good practices. However, there are a few areas that can be improved to make the code more robust and efficient."
     }
+  },
+  {
+    "challengeId": "11-useeffect-debounced-search",
+    "challengeName": "useEffect - Debounced Search",
+    "timestamp": "2026-06-16T05:13:17.422Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 88,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 81.4,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 11: useEffect - Debounced Search"
+              ],
+              "fullName": " Challenge 11: useEffect - Debounced Search FilterBar should exist for search/debounce integration",
+              "status": "passed",
+              "title": "FilterBar should exist for search/debounce integration",
+              "duration": 11,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 11: useEffect - Debounced Search"
+              ],
+              "fullName": " Challenge 11: useEffect - Debounced Search TaskList should render tasks",
+              "status": "passed",
+              "title": "TaskList should render tasks",
+              "duration": 7,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1781586798426,
+          "endTime": 1781586798444,
+          "status": "passed",
+          "message": "",
+          "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-11.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 88,
+      "passed": false,
+      "totalIssues": 2,
+      "errors": 1,
+      "warnings": 1,
+      "details": [
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/App.tsx",
+          "messages": [
+            {
+              "ruleId": "no-empty",
+              "severity": 2,
+              "message": "Empty block statement.",
+              "line": 63,
+              "column": 13,
+              "nodeType": "BlockStatement",
+              "messageId": "unexpected",
+              "endLine": 63,
+              "endColumn": 15,
+              "suggestions": [
+                {
+                  "messageId": "suggestComment",
+                  "data": {
+                    "type": "block"
+                  },
+                  "fix": {
+                    "range": [
+                      1527,
+                      1527
+                    ],
+                    "text": " /* empty */ "
+                  },
+                  "desc": "Add comment inside empty block statement."
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { useState, useEffect } from \"react\";\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\nimport ChallengeList from \"./components/ChallengeList\";\nimport TaskList from \"./components/TaskList\";\nimport TaskApp from \"./components/TaskApp\";\nimport TaskDetailPage from \"./components/TaskDetailPage\";\nimport FetchDemoView from \"./components/FetchDemoView\";\nimport { ThemeProvider } from \"./contexts/ThemeContext\";\nimport type { Task } from \"./components/TaskList\";\n\nconst INITIAL_TASKS: Task[] = [\n  {\n    id: 1,\n    title: \"First Task\",\n    description: \"Description one\",\n    priority: \"High\",\n    completed: false,\n  },\n  {\n    id: 2,\n    title: \"Second Task\",\n    description: \"Description two\",\n    priority: \"Medium\",\n    completed: false,\n  },\n  {\n    id: 3,\n    title: \"Third Task\",\n    description: \"Description three\",\n    priority: \"Low\",\n    completed: false,\n  },\n  {\n    id: 4,\n    title: \"Fourth Task\",\n    description: \"Description four\",\n    priority: \"Medium\",\n    completed: false,\n  },\n  {\n    id: 5,\n    title: \"Fifth Task\",\n    description: \"Description five\",\n    priority: \"High\",\n    completed: false,\n  },\n];\n\nconst STORAGE_KEY = \"task-app-tasks\";\n\nfunction AppContent() {\n  const [tasks, setTasks] = useState<Task[]>(() => {\n    try {\n      const storedTasks = localStorage.getItem(STORAGE_KEY);\n\n      if (storedTasks) {\n        const parsedTasks: Task[] = JSON.parse(storedTasks);\n\n        if (Array.isArray(parsedTasks)) {\n          return parsedTasks;\n        }\n      }\n    } catch {}\n\n    return INITIAL_TASKS;\n  });\n\n  useEffect(() => {\n    localStorage.setItem(\n      STORAGE_KEY,\n      JSON.stringify(tasks)\n    );\n  }, [tasks]);\n\n  const handleDelete = (id: string | number) => {\n    setTasks((prev) => prev.filter((t) => t.id !== id));\n  };\n\n  return (\n    <BrowserRouter>\n      <div className=\"App\">\n        <main>\n          <Routes>\n            <Route path=\"/\" element={<ChallengeList />} />\n\n            <Route\n              path=\"/challenge/01-static-task-display\"\n              element={<TaskList />}\n            />\n\n            <Route\n              path=\"/challenge/02-dynamic-task-rendering\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm={false}\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/03-adding-new-tasks\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/04-task-completion-toggle\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/05-task-deletion\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                  onDelete={handleDelete}\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/06-task-filtering\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                  showFilterBar\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/07-priority-based-sorting\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                  showFilterBar\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/08-task-editing\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                  showFilterBar\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/09-search-functionality\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                  showFilterBar\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/21-react-router\"\n              element={\n                <TaskApp\n                  tasks={tasks}\n                  setTasks={setTasks}\n                  showForm\n                />\n              }\n            />\n\n            <Route\n              path=\"/challenge/21-react-router/task/:id\"\n              element={<TaskDetailPage />}\n            />\n\n            <Route\n              path=\"/challenge/22-data-fetching\"\n              element={<FetchDemoView />}\n            />\n          </Routes>\n        </main>\n      </div>\n    </BrowserRouter>\n  );\n}\n\nfunction App() {\n  return (\n    <ThemeProvider>\n      <AppContent />\n    </ThemeProvider>\n  );\n}\n\nexport default App;",
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/FilterBar.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/TaskApp.tsx",
+          "messages": [
+            {
+              "ruleId": "react-hooks/exhaustive-deps",
+              "severity": 1,
+              "message": "React Hook useEffect has a missing dependency: 'debouncedSearchText'. Either include it or remove the dependency array.",
+              "line": 56,
+              "column": 6,
+              "nodeType": "ArrayExpression",
+              "endLine": 56,
+              "endColumn": 18,
+              "suggestions": [
+                {
+                  "desc": "Update the dependencies array to be: [debouncedSearchText, searchText]",
+                  "fix": {
+                    "range": [
+                      1240,
+                      1252
+                    ],
+                    "text": "[debouncedSearchText, searchText]"
+                  }
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { useState, useEffect } from \"react\";\nimport TaskList from \"./TaskList\";\nimport TaskForm from \"./TaskForm\";\nimport FilterBar from \"./FilterBar\";\nimport type { Task } from \"./TaskList\";\n\ninterface TaskAppProps {\n  tasks: Task[];\n  setTasks?: React.Dispatch<React.SetStateAction<Task[]>>;\n  showForm?: boolean;\n  onDelete?: (id: string | number) => void;\n  showFilterBar?: boolean;\n}\n\nexport default function TaskApp({\n  tasks,\n  setTasks,\n  showForm,\n  onDelete,\n  showFilterBar,\n}: TaskAppProps) {\n  const [filter, setFilter] = useState<\n    \"all\" | \"active\" | \"completed\"\n  >(\"all\");\n\n  const [sortOrder, setSortOrder] =\n    useState(\"recent\");\n\n  const [searchText, setSearchText] =\n    useState(\"\");\n\n  // Challenge 11\n  const [debouncedSearchText, setDebouncedSearchText] =\n    useState(\"\");\n\n  const [isSearching, setIsSearching] =\n    useState(false);\n\n  const [editingId, setEditingId] = useState<\n    string | number | null\n  >(null);\n\n  useEffect(() => {\n    if (searchText !== debouncedSearchText) {\n      setIsSearching(true);\n    }\n\n    const timeoutId = setTimeout(() => {\n      setDebouncedSearchText(searchText);\n      setIsSearching(false);\n    }, 300);\n\n    return () => {\n      clearTimeout(timeoutId);\n    };\n  }, [searchText]);\n\n  function handleAddTask(task: Task) {\n    if (setTasks) {\n      setTasks((prev) => [...prev, task]);\n    }\n  }\n\n  function handleToggle(id: string | number) {\n    if (!setTasks) return;\n\n    setTasks((prev) =>\n      prev.map((task) =>\n        task.id === id\n          ? {\n              ...task,\n              completed: !task.completed,\n            }\n          : task\n      )\n    );\n  }\n\n  function handleUpdateTask(\n    id: string | number,\n    updates: {\n      title: string;\n      description: string;\n      priority: string;\n    }\n  ) {\n    if (!setTasks) return;\n\n    if (!updates.title.trim()) {\n      return;\n    }\n\n    setTasks((prev) =>\n      prev.map((task) =>\n        task.id === id\n          ? {\n              ...task,\n              ...updates,\n            }\n          : task\n      )\n    );\n\n    setEditingId(null);\n  }\n\n  // Filter\n  const statusFiltered =\n    filter === \"all\"\n      ? tasks\n      : filter === \"active\"\n      ? tasks.filter((t) => !t.completed)\n      : tasks.filter((t) => t.completed);\n\n  // Search (using debounced value)\n  const searchedTasks =\n    statusFiltered.filter((task) => {\n      const search =\n        debouncedSearchText.toLowerCase();\n\n      return (\n        task.title\n          .toLowerCase()\n          .includes(search) ||\n        task.description\n          .toLowerCase()\n          .includes(search)\n      );\n    });\n\n  // Sort\n  const priorityValue: Record<string, number> =\n    {\n      High: 3,\n      Medium: 2,\n      Low: 1,\n    };\n\n  const sortedTasks = [...searchedTasks].sort(\n    (a, b) => {\n      if (sortOrder === \"high\") {\n        return (\n          priorityValue[b.priority] -\n          priorityValue[a.priority]\n        );\n      }\n\n      if (sortOrder === \"low\") {\n        return (\n          priorityValue[a.priority] -\n          priorityValue[b.priority]\n        );\n      }\n\n      if (sortOrder === \"alphabetical\") {\n        return a.title\n          .toLowerCase()\n          .localeCompare(\n            b.title.toLowerCase()\n          );\n      }\n\n      return 0;\n    }\n  );\n\n  return (\n    <div>\n      {showForm && (\n        <TaskForm\n          onAddTask={handleAddTask}\n        />\n      )}\n\n      {showFilterBar && (\n        <FilterBar\n          filter={filter}\n          onFilterChange={setFilter}\n          sortOrder={sortOrder}\n          onSortChange={setSortOrder}\n          searchText={searchText}\n          onSearchChange={setSearchText}\n          onClearSearch={() =>\n            setSearchText(\"\")\n          }\n          isSearching={isSearching}\n        />\n      )}\n\n      <div id=\"task-count\">\n        Showing {sortedTasks.length} of{\" \"}\n        {tasks.length} tasks\n      </div>\n\n      {sortedTasks.length === 0 ? (\n        <div id=\"filter-empty-message\">\n          No tasks found\n        </div>\n      ) : (\n        <TaskList\n          tasks={sortedTasks}\n          onToggle={handleToggle}\n          onDelete={onDelete}\n          countText={`Showing ${sortedTasks.length} of ${tasks.length} tasks`}\n          onUpdateTask={handleUpdateTask}\n          editingId={editingId}\n          setEditingId={setEditingId}\n        />\n      )}\n    </div>\n  );\n}",
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "useEffect"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/FilterBar.tsx",
+          "patternsFound": [
+            "functionalComponent"
+          ],
+          "patternsMissing": [
+            "useEffect"
+          ]
+        },
+        {
+          "file": "src/components/TaskApp.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/App.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "useEffect"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "totalTests": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-11.spec.ts",
+          "file": "challenge-11.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 11: useEffect Debounced Search - E2E",
+              "file": "challenge-11.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5357,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-16T05:13:21.123Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5166,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-16T05:13:27.506Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry1/error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5127,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-16T05:13:33.198Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry2/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-11-Challenge-11--766f3-2E-should-display-task-list-chromium-retry2/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-11.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "1017095ef2170c8a8deb-e3db42bbbc868bb5cc60",
+                  "file": "challenge-11.spec.ts",
+                  "line": 8,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Exit 1",
+      "passed": false
+    },
+    "aiReviewResults": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:13:38.456Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components promotes type safety and reusability.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each component and function."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive, such as `handleAddTask` and `handleToggle`. Consider using more descriptive names like `addTaskToState` and `toggleTaskCompletion`.",
+        "The `useEffect` hook in `TaskApp` could be refactored to reduce its complexity. Consider breaking it down into smaller, more manageable functions.",
+        "The `debouncedSearchText` state could be removed in favor of using a more functional approach, such as using the `useDebounce` hook from a library like `react-use`."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a clear separation of concerns between components. However, there are some areas for improvement, such as more descriptive function names and a more functional approach to debouncing the search input."
+    },
+    "aiResults": {
+      "challengeId": "11-useeffect-debounced-search",
+      "timestamp": "2026-06-16T05:13:38.456Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and functional components promotes type safety and reusability.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each component and function."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive, such as `handleAddTask` and `handleToggle`. Consider using more descriptive names like `addTaskToState` and `toggleTaskCompletion`.",
+        "The `useEffect` hook in `TaskApp` could be refactored to reduce its complexity. Consider breaking it down into smaller, more manageable functions.",
+        "The `debouncedSearchText` state could be removed in favor of using a more functional approach, such as using the `useDebounce` hook from a library like `react-use`."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a clear separation of concerns between components. However, there are some areas for improvement, such as more descriptive function names and a more functional approach to debouncing the search input."
+    }
   }
 ]
