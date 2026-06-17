@@ -8,6 +8,8 @@ import FetchDemoView from "./components/FetchDemoView";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import type { Task } from "./components/TaskList";
 
+const STORAGE_KEY = "task-app-tasks";
+
 const INITIAL_TASKS: Task[] = [
   {
     id: 1,
@@ -15,6 +17,8 @@ const INITIAL_TASKS: Task[] = [
     description: "Description one",
     priority: "High",
     completed: false,
+    category: "Work",
+    tags: ["important"],
   },
   {
     id: 2,
@@ -22,6 +26,8 @@ const INITIAL_TASKS: Task[] = [
     description: "Description two",
     priority: "Medium",
     completed: false,
+    category: "Personal",
+    tags: ["home"],
   },
   {
     id: 3,
@@ -29,6 +35,8 @@ const INITIAL_TASKS: Task[] = [
     description: "Description three",
     priority: "Low",
     completed: false,
+    category: "General",
+    tags: [],
   },
   {
     id: 4,
@@ -36,6 +44,8 @@ const INITIAL_TASKS: Task[] = [
     description: "Description four",
     priority: "Medium",
     completed: false,
+    category: "Work",
+    tags: ["office"],
   },
   {
     id: 5,
@@ -43,37 +53,32 @@ const INITIAL_TASKS: Task[] = [
     description: "Description five",
     priority: "High",
     completed: false,
+    category: "Personal",
+    tags: ["urgent", "family"],
   },
 ];
 
-const STORAGE_KEY = "task-app-tasks";
-
 function AppContent() {
   const [tasks, setTasks] = useState<Task[]>(() => {
-    try {
-      const storedTasks = localStorage.getItem(STORAGE_KEY);
+    const savedTasks = localStorage.getItem(STORAGE_KEY);
 
-      if (storedTasks) {
-        const parsedTasks: Task[] = JSON.parse(storedTasks);
-
-        if (Array.isArray(parsedTasks)) {
-          return parsedTasks;
-        }
+    if (savedTasks) {
+      try {
+        return JSON.parse(savedTasks);
+      } catch {
+        return INITIAL_TASKS;
       }
-    } catch {}
+    }
 
     return INITIAL_TASKS;
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      STORAGE_KEY,
-      JSON.stringify(tasks)
-    );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
   const handleDelete = (id: string | number) => {
-    setTasks((prev) => prev.filter((t) => t.id !== id));
+    setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
   return (
@@ -171,6 +176,42 @@ function AppContent() {
 
             <Route
               path="/challenge/09-search-functionality"
+              element={
+                <TaskApp
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  showForm
+                  showFilterBar
+                />
+              }
+            />
+
+            <Route
+              path="/challenge/10-useeffect-local-storage"
+              element={
+                <TaskApp
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  showForm
+                  showFilterBar
+                />
+              }
+            />
+
+            <Route
+              path="/challenge/11-useeffect-debounced-search"
+              element={
+                <TaskApp
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  showForm
+                  showFilterBar
+                />
+              }
+            />
+
+            <Route
+              path="/challenge/12-categories-and-tags"
               element={
                 <TaskApp
                   tasks={tasks}
