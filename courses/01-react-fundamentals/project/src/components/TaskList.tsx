@@ -67,30 +67,44 @@ dueDate: undefined,
 
 export default function TaskList({
 tasks = defaultTasks,
+countText,
 onToggle,
 onDelete,
 onUpdateTask,
 editingId,
 setEditingId,
 }: TaskListProps) {
+const completedCount =
+tasks.filter(
+(task) => task.completed
+).length;
+
 return (
-<section id="task-list">
-{tasks.map((task) => (
-<TaskCard
-key={task.id}
-id={task.id}
-title={task.title}
-description={task.description}
-priority={task.priority}
-completed={task.completed}
-dueDate={task.dueDate}
-onToggle={onToggle}
-onDelete={onDelete}
-onUpdateTask={onUpdateTask}
-editingId={editingId}
-setEditingId={setEditingId}
-/>
-))}
-</section>
+<>
+<div id="task-count">
+{countText ||
+"${completedCount} of ${tasks.length} completed"}
+</div>
+
+  <section id="task-list">
+    {tasks.map((task) => (
+      <TaskCard
+        key={task.id}
+        id={task.id}
+        title={task.title}
+        description={task.description}
+        priority={task.priority}
+        completed={task.completed}
+        dueDate={task.dueDate}
+        onToggle={onToggle}
+        onDelete={onDelete}
+        onUpdateTask={onUpdateTask}
+        editingId={editingId}
+        setEditingId={setEditingId}
+      />
+    ))}
+  </section>
+</>
+
 );
 }
