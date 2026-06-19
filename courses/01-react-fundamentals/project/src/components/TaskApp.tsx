@@ -3,6 +3,7 @@ import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
 import StatsPanel from "./StatsPanel";
+import { useTheme } from "../contexts/ThemeContext";
 import type { Task } from "./TaskList";
 
 interface TaskAppProps {
@@ -22,6 +23,9 @@ export default function TaskApp({
   showFilterBar,
   showStatsPanel,
 }: TaskAppProps) {
+  const { theme, toggleTheme } =
+    useTheme();
+
   const [filter, setFilter] = useState<
     "all" | "active" | "completed"
   >("all");
@@ -32,38 +36,54 @@ export default function TaskApp({
   const [searchText, setSearchText] =
     useState("");
 
-  const [debouncedSearchText, setDebouncedSearchText] =
-    useState("");
+  const [
+    debouncedSearchText,
+    setDebouncedSearchText,
+  ] = useState("");
 
   const [isSearching, setIsSearching] =
     useState(false);
 
-  const [editingId, setEditingId] = useState<
-    string | number | null
-  >(null);
+  const [editingId, setEditingId] =
+    useState<
+      string | number | null
+    >(null);
 
   useEffect(() => {
-    if (searchText !== debouncedSearchText) {
+    if (
+      searchText !==
+      debouncedSearchText
+    ) {
       setIsSearching(true);
     }
 
     const timeoutId = setTimeout(() => {
-      setDebouncedSearchText(searchText);
+      setDebouncedSearchText(
+        searchText
+      );
       setIsSearching(false);
     }, 300);
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [searchText, debouncedSearchText]);
+  }, [
+    searchText,
+    debouncedSearchText,
+  ]);
 
   function handleAddTask(task: Task) {
     if (setTasks) {
-      setTasks((prev) => [...prev, task]);
+      setTasks((prev) => [
+        ...prev,
+        task,
+      ]);
     }
   }
 
-  function handleToggle(id: string | number) {
+  function handleToggle(
+    id: string | number
+  ) {
     if (!setTasks) return;
 
     setTasks((prev) =>
@@ -71,7 +91,8 @@ export default function TaskApp({
         task.id === id
           ? {
               ...task,
-              completed: !task.completed,
+              completed:
+                !task.completed,
             }
           : task
       )
@@ -110,73 +131,132 @@ export default function TaskApp({
     filter === "all"
       ? tasks
       : filter === "active"
-      ? tasks.filter((t) => !t.completed)
-      : tasks.filter((t) => t.completed);
+      ? tasks.filter(
+          (t) => !t.completed
+        )
+      : tasks.filter(
+          (t) => t.completed
+        );
 
   const searchedTasks =
-    statusFiltered.filter((task) => {
-      const search =
-        debouncedSearchText.toLowerCase();
+    statusFiltered.filter(
+      (task) => {
+        const search =
+          debouncedSearchText.toLowerCase();
 
+        return (
+          task.title
+            .toLowerCase()
+            .includes(search) ||
+          task.description
+            .toLowerCase()
+            .includes(search)
+        );
+      }
+    );
+
+  const priorityValue: Record<
+    string,
+    number
+  > = {
+    High: 3,
+    Medium: 2,
+    Low: 1,
+  };
+
+  const sortedTasks = [
+    ...searchedTasks,
+  ].sort((a, b) => {
+    if (sortOrder === "high") {
       return (
-        task.title
-          .toLowerCase()
-          .includes(search) ||
-        task.description
-          .toLowerCase()
-          .includes(search)
+        priorityValue[
+          b.priority
+        ] -
+        priorityValue[
+          a.priority
+        ]
       );
-    });
-
-  const priorityValue: Record<string, number> =
-    {
-      High: 3,
-      Medium: 2,
-      Low: 1,
-    };
-
-  const sortedTasks = [...searchedTasks].sort(
-    (a, b) => {
-      if (sortOrder === "high") {
-        return (
-          priorityValue[b.priority] -
-          priorityValue[a.priority]
-        );
-      }
-
-      if (sortOrder === "low") {
-        return (
-          priorityValue[a.priority] -
-          priorityValue[b.priority]
-        );
-      }
-
-      if (sortOrder === "alphabetical") {
-        return a.title
-          .toLowerCase()
-          .localeCompare(
-            b.title.toLowerCase()
-          );
-      }
-
-      if (sortOrder === "dueDate") {
-        const aDate = a.dueDate
-          ? new Date(a.dueDate).getTime()
-          : Number.MAX_SAFE_INTEGER;
-
-        const bDate = b.dueDate
-          ? new Date(b.dueDate).getTime()
-          : Number.MAX_SAFE_INTEGER;
-
-        return aDate - bDate;
-      }
-
-      return 0;
     }
-  );
+
+    if (sortOrder === "low") {
+      return (
+        priorityValue[
+          a.priority
+        ] -
+        priorityValue[
+          b.priority
+        ]
+      );
+    }
+
+    if (
+      sortOrder ===
+      "alphabetical"
+    ) {
+      return a.title
+        .toLowerCase()
+        .localeCompare(
+          b.title.toLowerCase()
+        );
+    }
+
+    if (sortOrder === "dueDate") {
+      const aDate = a.dueDate
+        ? new Date(
+            a.dueDate
+          ).getTime()
+        : Number.MAX_SAFE_INTEGER;
+
+      const bDate = b.dueDate
+        ? new Date(
+            b.dueDate
+          ).getTime()
+        : Number.MAX_SAFE_INTEGER;
+
+      return aDate - bDate;
+    }
+
+    return 0;
+  });
 
   return (
-    <div>
+    <div
+      data-theme={theme}
+      style={{
+        backgroundColor:
+          theme === "dark"
+            ? "#1a1a1a"
+            : "#ffffff",
+        color:
+          theme === "dark"
+            ? "#ffffff"
+            : "#000000",
+        minHeight: "100vh",
+        padding: "1rem",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent:
+            "space-between",
+          alignItems: "center",
+          marginBottom: "1rem",
+        }}
+      >
+        <h1>Task Manager</h1>
+
+        <button
+          id="theme-toggle"
+          type="button"
+          onClick={toggleTheme}
+        >
+          {theme === "dark"
+            ? "☀️ Light"
+            : "🌙 Dark"}
+        </button>
+      </div>
+
       {showForm && (
         <TaskForm
           onAddTask={handleAddTask}
@@ -186,25 +266,39 @@ export default function TaskApp({
       {showFilterBar && (
         <FilterBar
           filter={filter}
-          onFilterChange={setFilter}
+          onFilterChange={
+            setFilter
+          }
           sortOrder={sortOrder}
-          onSortChange={setSortOrder}
-          searchText={searchText}
-          onSearchChange={setSearchText}
+          onSortChange={
+            setSortOrder
+          }
+          searchText={
+            searchText
+          }
+          onSearchChange={
+            setSearchText
+          }
           onClearSearch={() =>
             setSearchText("")
           }
-          isSearching={isSearching}
+          isSearching={
+            isSearching
+          }
         />
       )}
 
       <div id="task-count">
-        Showing {sortedTasks.length} of{" "}
-        {tasks.length} tasks
+        Showing {
+          sortedTasks.length
+        }{" "}
+        of {tasks.length} tasks
       </div>
 
       {showStatsPanel && (
-        <StatsPanel tasks={tasks} />
+        <StatsPanel
+          tasks={tasks}
+        />
       )}
 
       {sortedTasks.length === 0 ? (
@@ -214,12 +308,20 @@ export default function TaskApp({
       ) : (
         <TaskList
           tasks={sortedTasks}
-          onToggle={handleToggle}
+          onToggle={
+            handleToggle
+          }
           onDelete={onDelete}
           countText={`Showing ${sortedTasks.length} of ${tasks.length} tasks`}
-          onUpdateTask={handleUpdateTask}
-          editingId={editingId}
-          setEditingId={setEditingId}
+          onUpdateTask={
+            handleUpdateTask
+          }
+          editingId={
+            editingId
+          }
+          setEditingId={
+            setEditingId
+          }
         />
       )}
     </div>

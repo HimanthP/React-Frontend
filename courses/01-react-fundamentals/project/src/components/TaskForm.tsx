@@ -1,14 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import FormInput from "./FormInput";
-
-interface Task {
-  id: string | number;
-  title: string;
-  description: string;
-  priority: string;
-  completed: boolean;
-}
+import type { Task } from "./TaskList";
 
 interface TaskFormProps {
   onAddTask: (task: Task) => void;
@@ -42,6 +35,8 @@ export default function TaskForm({
       description,
       priority,
       completed: false,
+      category: "General",
+      tags: [],
     });
 
     setTitle("");
