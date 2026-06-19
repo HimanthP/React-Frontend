@@ -2,106 +2,67 @@ import { useMemo } from "react";
 import type { Task } from "./TaskList";
 
 interface StatsPanelProps {
-tasks?: Task[];
+  tasks?: Task[];
 }
 
 export default function StatsPanel({
-tasks = [],
+  tasks = [],
 }: StatsPanelProps) {
-const stats = useMemo(() => {
-const total = tasks.length;
+  const stats = useMemo(() => {
+    const total = tasks.length;
 
-const completed = tasks.filter(
-  (task) => task.completed
-).length;
+    const completed = tasks.filter(
+      (task) => task.completed
+    ).length;
 
-const active = total - completed;
+    const active = total - completed;
 
-const overdue = tasks.filter(
-  (task) => {
-    if (
-      task.completed ||
-      !task.dueDate
-    ) {
-      return false;
-    }
+    const overdue = tasks.filter((task) => {
+      if (task.completed || !task.dueDate) {
+        return false;
+      }
 
-    const today = new Date();
-    today.setHours(
-      0,
-      0,
-      0,
-      0
-    );
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
 
-    const due = new Date(
-      task.dueDate
-    );
+      const dueDate = new Date(task.dueDate);
+      dueDate.setHours(0, 0, 0, 0);
 
-    due.setHours(
-      0,
-      0,
-      0,
-      0
-    );
+      return dueDate < today;
+    }).length;
 
-    return (
-      due.getTime() <
-      today.getTime()
-    );
-  }
-).length;
+    const percentage =
+      total === 0
+        ? 0
+        : Math.round((completed / total) * 100);
 
-const completionPercentage =
-  total === 0
-    ? 0
-    : Math.round(
-        (completed / total) *
-          100
-      );
+    return {
+      total,
+      completed,
+      active,
+      overdue,
+      percentage,
+    };
+  }, [tasks]);
 
-return {
-  total,
-  completed,
-  active,
-  overdue,
-  completionPercentage,
-};
+  return (
+    <section id="stats-panel">
+      <h2>Task Statistics</h2>
 
-}, [tasks]);
+      <p>Total: {stats.total}</p>
+      <p>Completed: {stats.completed}</p>
+      <p>Active: {stats.active}</p>
+      <p>Overdue: {stats.overdue}</p>
+      <p>Completion Rate: {stats.percentage}%</p>
 
-return (
-<section id="stats-panel">
-<h2>Task Statistics</h2>
-
-  <p>Total: {stats.total}</p>
-
-  <p>
-    Completed: {stats.completed}
-  </p>
-
-  <p>Active: {stats.active}</p>
-
-  <p>
-    Overdue: {stats.overdue}
-  </p>
-
-  <p>
-    Completion Rate:{" "}
-    {stats.completionPercentage}%
-  </p>
-
-  <div
-    role="progressbar"
-    aria-valuenow={
-      stats.completionPercentage
-    }
-    aria-valuemin={0}
-    aria-valuemax={100}
-  >
-    {stats.completionPercentage}%
-  </div>
-</section>
-
-);
+      <div
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={stats.percentage}
+      >
+        {stats.percentage}%
+      </div>
+    </section>
+  );
 }

@@ -10,7 +10,6 @@ interface FilterBarProps {
   onSearchChange?: (value: string) => void;
   onClearSearch?: () => void;
 
-  // Challenge 11
   isSearching?: boolean;
 }
 
@@ -66,6 +65,10 @@ function FilterBar({
 
         <option value="alphabetical">
           Alphabetical
+        </option>
+
+        <option value="dueDate">
+          Due Date (Soonest First)
         </option>
       </select>
 

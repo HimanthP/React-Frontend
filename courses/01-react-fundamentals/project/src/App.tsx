@@ -211,17 +211,29 @@ function AppContent() {
             />
 
             <Route
-              path="/challenge/12-categories-and-tags"
-              element={
-                <TaskApp
-                  tasks={tasks}
-                  setTasks={setTasks}
-                  showForm
-                  showFilterBar
-                />
-              }
-            />
+  path="/challenge/12-categories-and-tags"
+  element={
+    <TaskApp
+      tasks={tasks}
+      setTasks={setTasks}
+      showForm
+      showFilterBar
+    />
+  }
+/>
 
+<Route
+  path="/challenge/14-task-statistics-dashboard"
+  element={
+    <TaskApp
+      tasks={tasks}
+      setTasks={setTasks}
+      showForm
+      showFilterBar
+      showStatsPanel
+    />
+  }
+/>
             <Route
               path="/challenge/21-react-router"
               element={

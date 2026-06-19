@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
+import StatsPanel from "./StatsPanel";
 import type { Task } from "./TaskList";
 
 interface TaskAppProps {
@@ -10,6 +11,7 @@ interface TaskAppProps {
   showForm?: boolean;
   onDelete?: (id: string | number) => void;
   showFilterBar?: boolean;
+  showStatsPanel?: boolean;
 }
 
 export default function TaskApp({
@@ -18,6 +20,7 @@ export default function TaskApp({
   showForm,
   onDelete,
   showFilterBar,
+  showStatsPanel,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<
     "all" | "active" | "completed"
@@ -29,7 +32,6 @@ export default function TaskApp({
   const [searchText, setSearchText] =
     useState("");
 
-  // Challenge 11
   const [debouncedSearchText, setDebouncedSearchText] =
     useState("");
 
@@ -53,7 +55,7 @@ export default function TaskApp({
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [searchText]);
+  }, [searchText, debouncedSearchText]);
 
   function handleAddTask(task: Task) {
     if (setTasks) {
@@ -104,7 +106,6 @@ export default function TaskApp({
     setEditingId(null);
   }
 
-  // Filter
   const statusFiltered =
     filter === "all"
       ? tasks
@@ -112,7 +113,6 @@ export default function TaskApp({
       ? tasks.filter((t) => !t.completed)
       : tasks.filter((t) => t.completed);
 
-  // Search (using debounced value)
   const searchedTasks =
     statusFiltered.filter((task) => {
       const search =
@@ -128,7 +128,6 @@ export default function TaskApp({
       );
     });
 
-  // Sort
   const priorityValue: Record<string, number> =
     {
       High: 3,
@@ -158,6 +157,18 @@ export default function TaskApp({
           .localeCompare(
             b.title.toLowerCase()
           );
+      }
+
+      if (sortOrder === "dueDate") {
+        const aDate = a.dueDate
+          ? new Date(a.dueDate).getTime()
+          : Number.MAX_SAFE_INTEGER;
+
+        const bDate = b.dueDate
+          ? new Date(b.dueDate).getTime()
+          : Number.MAX_SAFE_INTEGER;
+
+        return aDate - bDate;
       }
 
       return 0;
@@ -191,6 +202,10 @@ export default function TaskApp({
         Showing {sortedTasks.length} of{" "}
         {tasks.length} tasks
       </div>
+
+      {showStatsPanel && (
+        <StatsPanel tasks={tasks} />
+      )}
 
       {sortedTasks.length === 0 ? (
         <div id="filter-empty-message">
