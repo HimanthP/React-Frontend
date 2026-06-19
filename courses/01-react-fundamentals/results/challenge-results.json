@@ -6107,5 +6107,436 @@
       "maintainability": 80,
       "overall": "The code is well-structured, readable, and maintainable. However, there are some areas where improvements can be made to make the code more robust and efficient."
     }
+  },
+  {
+    "challengeId": "15-component-organization",
+    "challengeName": "Component Organization with Props",
+    "timestamp": "2026-06-19T11:42:53.934Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 83.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 15: Component Organization with Props"
+              ],
+              "fullName": " Challenge 15: Component Organization with Props TaskCard should accept and render props",
+              "status": "passed",
+              "title": "TaskCard should accept and render props",
+              "duration": 14,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 15: Component Organization with Props"
+              ],
+              "fullName": " Challenge 15: Component Organization with Props TaskList should render TaskCards with props",
+              "status": "passed",
+              "title": "TaskList should render TaskCards with props",
+              "duration": 3,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1781869374911,
+          "endTime": 1781869374928,
+          "status": "passed",
+          "message": "",
+          "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-15.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/Badge.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/Button.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/FormInput.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/src/components/StatusIndicator.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "functionalComponent",
+        "props"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/components/Button.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/Badge.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/StatusIndicator.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/FormInput.tsx",
+          "patternsFound": [
+            "functionalComponent",
+            "props"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "totalTests": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-15.spec.ts",
+          "file": "challenge-15.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 15: Component Organization - E2E",
+              "file": "challenge-15.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display task list",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5357,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-06-19T11:42:57.528Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5167,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-06-19T11:43:03.757Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium-retry1/error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5149,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                              "column": 46,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should display task list'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#task-list'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                                "column": 46,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#task-list')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#task-list')\u001b[22m\n\n\n   7 |\n   8 |   test('should display task list', async ({ page }) => {\n>  9 |     await expect(page.locator('#task-list')).toBeVisible();\n     |                                              ^\n  10 |   });\n  11 | });\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts:9:46"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-06-19T11:43:09.448Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium-retry2/test-failed-1.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/test-results/challenge-15-Challenge-15--73dba-2E-should-display-task-list-chromium-retry2/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/01-react-fundamentals/project/tests/e2e/challenge-15.spec.ts",
+                            "column": 46,
+                            "line": 9
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "a220d5623351847681d1-e80f7889496da537a60a",
+                  "file": "challenge-15.spec.ts",
+                  "line": 8,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Exit 1",
+      "passed": false
+    },
+    "aiReviewResults": {
+      "challengeId": "15-component-organization",
+      "timestamp": "2026-06-19T11:43:14.723Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Clear and concise code structure",
+        "Effective use of TypeScript interfaces and destructuring",
+        "Well-organized and easy-to-follow component implementations"
+      ],
+      "improvements": [
+        "Consider adding JSDoc comments to explain the purpose and usage of each component",
+        "In `Button.tsx`, consider adding a default value for `variant` to ensure it's always set",
+        "In `FormInput.tsx`, consider adding a default value for `error` to ensure it's always set"
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and easy to follow. The use of TypeScript interfaces and destructuring makes the code more readable and efficient. However, there are a few minor improvements that can be made to further enhance the code's readability and maintainability."
+    },
+    "aiResults": {
+      "challengeId": "15-component-organization",
+      "timestamp": "2026-06-19T11:43:14.723Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "Clear and concise code structure",
+        "Effective use of TypeScript interfaces and destructuring",
+        "Well-organized and easy-to-follow component implementations"
+      ],
+      "improvements": [
+        "Consider adding JSDoc comments to explain the purpose and usage of each component",
+        "In `Button.tsx`, consider adding a default value for `variant` to ensure it's always set",
+        "In `FormInput.tsx`, consider adding a default value for `error` to ensure it's always set"
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured, maintainable, and easy to follow. The use of TypeScript interfaces and destructuring makes the code more readable and efficient. However, there are a few minor improvements that can be made to further enhance the code's readability and maintainability."
+    }
   }
 ]

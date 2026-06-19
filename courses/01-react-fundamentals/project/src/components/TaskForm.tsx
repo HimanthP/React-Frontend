@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "./Button";
+import FormInput from "./FormInput";
 
 interface Task {
   id: string | number;
@@ -12,13 +14,19 @@ interface TaskFormProps {
   onAddTask: (task: Task) => void;
 }
 
-export default function TaskForm({ onAddTask }: TaskFormProps) {
+export default function TaskForm({
+  onAddTask,
+}: TaskFormProps) {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("Low");
+  const [description, setDescription] =
+    useState("");
+  const [priority, setPriority] =
+    useState("Low");
   const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(
+    e: React.FormEvent
+  ) {
     e.preventDefault();
 
     if (!title.trim()) {
@@ -43,37 +51,56 @@ export default function TaskForm({ onAddTask }: TaskFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="task-title">Title</label>
-      <input
+      <FormInput
+        label="Title"
         id="task-title"
-        type="text"
-        placeholder="Title"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+        onChange={(e) =>
+          setTitle(e.target.value)
+        }
       />
 
-      <label htmlFor="task-description">Description</label>
-      <textarea
+      <FormInput
+        label="Description"
         id="task-description"
-        placeholder="Description"
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Description"
+        textarea
+        onChange={(e) =>
+          setDescription(
+            e.target.value
+          )
+        }
       />
 
-      <label htmlFor="task-priority">Priority</label>
+      <label htmlFor="task-priority">
+        Priority
+      </label>
+
       <select
         id="task-priority"
         value={priority}
-        onChange={(e) => setPriority(e.target.value)}
+        onChange={(e) =>
+          setPriority(e.target.value)
+        }
       >
         <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
+        <option value="Medium">
+          Medium
+        </option>
         <option value="High">High</option>
       </select>
 
-      {error && <p id="task-form-error">{error}</p>}
+      {error && (
+        <p id="task-form-error">
+          {error}
+        </p>
+      )}
 
-      <button type="submit">Add Task</button>
+      <Button type="submit">
+        Add Task
+      </Button>
     </form>
   );
 }
