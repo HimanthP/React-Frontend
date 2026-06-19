@@ -274,5 +274,28 @@
       "maintainability": 80,
       "overall": "The code is generally well-written and follows good practices. However, there are some areas that can be improved to make the code more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "13-due-dates-and-sorting",
+    "challengeName": "Due Dates and Sorting",
+    "aiReview": {
+      "challengeId": "13-due-dates-and-sorting",
+      "timestamp": "2026-06-19T10:48:10.552Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and scalable.",
+        "The code includes comments and explanations to help understand the logic and functionality."
+      ],
+      "improvements": [
+        "Some of the variable names could be more descriptive and follow a consistent naming convention.",
+        "The `handleSave` and `handleCancel` functions in `TaskCard` could be extracted into separate functions for better readability and maintainability.",
+        "The `sortedTasks` array in `TaskApp` could be memoized using `useMemo` to avoid unnecessary re-renders."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but there are some areas for improvement to enhance readability and performance."
+    }
   }
 ]
