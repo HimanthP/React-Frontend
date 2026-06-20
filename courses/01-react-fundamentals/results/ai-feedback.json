@@ -458,5 +458,21 @@
       "maintainability": 90,
       "overall": "The code is well-structured and follows best practices for React and TypeScript development. However, there are a few areas that can be improved to make the code more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "21-react-router",
+    "challengeName": "React Router - Routing and Navigation",
+    "aiReview": {
+      "challengeId": "21-react-router",
+      "timestamp": "2026-06-20T10:09:06.869Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (413): Request too large for model `llama-3.1-8b-instant` in organization `org_01kte8rjbae8d9pz13sar2mkdd` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6281, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
   }
 ]

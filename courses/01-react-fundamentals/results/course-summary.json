@@ -1,11 +1,11 @@
 {
   "courseId": "01-react-fundamentals",
   "courseName": "React Fundamentals",
-  "lastUpdated": "2026-06-20T09:54:50.757Z",
+  "lastUpdated": "2026-06-20T10:09:07.481Z",
   "totalChallenges": 23,
-  "completedChallenges": 20,
-  "averageScore": 87.3,
-  "completionPercentage": 87,
+  "completedChallenges": 21,
+  "averageScore": 87.2,
+  "completionPercentage": 91.3,
   "badgeLevel": "silver",
   "challengeResults": [
     {
@@ -127,6 +127,12 @@
       "challengeName": "Error Boundaries and Error Handling",
       "score": 83.2,
       "passed": true
+    },
+    {
+      "challengeId": "21-react-router",
+      "challengeName": "React Router - Routing and Navigation",
+      "score": 85,
+      "passed": true
     }
   ],
   "skillStrengths": [
@@ -149,7 +155,8 @@
     "Custom Hook - useLocalStorage",
     "useReducer - Complex State Management",
     "Performance Optimization",
-    "Error Boundaries and Error Handling"
+    "Error Boundaries and Error Handling",
+    "React Router - Routing and Navigation"
   ],
   "improvementAreas": []
 }

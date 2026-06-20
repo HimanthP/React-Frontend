@@ -16,9 +16,10 @@ interface TaskAppProps {
   onDelete?: (id: string | number) => void;
   showFilterBar?: boolean;
   showStatsPanel?: boolean;
+  linkToTaskDetail?: boolean;
 }
 
-function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStatsPanel }: TaskAppProps) {
+function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStatsPanel, linkToTaskDetail }: TaskAppProps) {
   const { theme, toggleTheme } = useTheme();
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
@@ -127,6 +128,7 @@ function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStats
             onUpdateTask={handleUpdateTask}
             editingId={editingId}
             setEditingId={setEditingId}
+            linkToTaskDetail={linkToTaskDetail}
           />
         )}
       </ErrorBoundary>

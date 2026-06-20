@@ -20,6 +20,7 @@ interface TaskListProps {
   onUpdateTask?: (id: string | number, updates: { title: string; description: string; priority: string }) => void;
   editingId?: string | number | null;
   setEditingId?: (id: string | number | null) => void;
+  linkToTaskDetail?: boolean;
 }
 
 const defaultTasks: Task[] = [
@@ -28,7 +29,7 @@ const defaultTasks: Task[] = [
   { id: 3, title: "Task Three", description: "Description Three", priority: "High", completed: false, category: "Personal", tags: ["home"], dueDate: undefined },
 ];
 
-function TaskList({ tasks = defaultTasks, countText, onToggle, onDelete, onUpdateTask, editingId, setEditingId }: TaskListProps) {
+function TaskList({ tasks = defaultTasks, countText, onToggle, onDelete, onUpdateTask, editingId, setEditingId, linkToTaskDetail }: TaskListProps) {
   const completedCount = tasks.filter((task) => task.completed).length;
 
   return (
@@ -51,6 +52,7 @@ function TaskList({ tasks = defaultTasks, countText, onToggle, onDelete, onUpdat
             onUpdateTask={onUpdateTask}
             editingId={editingId}
             setEditingId={setEditingId}
+            linkToTaskDetail={linkToTaskDetail}
           />
         ))}
       </section>

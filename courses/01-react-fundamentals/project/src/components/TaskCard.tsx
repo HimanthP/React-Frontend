@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import Badge from "./Badge";
 import StatusIndicator from "./StatusIndicator";
@@ -16,6 +17,7 @@ interface TaskCardProps {
   editingId?: string | number | null;
   setEditingId?: (id: string | number | null) => void;
   onUpdateTask?: (id: string | number, updates: { title: string; description: string; priority: string }) => void;
+  linkToTaskDetail?: boolean;
 }
 
 function TaskCard({
@@ -31,6 +33,7 @@ function TaskCard({
   editingId,
   setEditingId,
   onUpdateTask,
+  linkToTaskDetail,
 }: TaskCardProps) {
   const resolvedId = taskId ?? id ?? 0;
   const isEditing = editingId === resolvedId;
@@ -101,7 +104,13 @@ function TaskCard({
         </>
       ) : (
         <>
-          <h2 style={completed ? { textDecoration: "line-through" } : undefined}>{title}</h2>
+          <h2 style={completed ? { textDecoration: "line-through" } : undefined}>
+            {linkToTaskDetail ? (
+              <Link to={`/challenge/21-react-router/task/${resolvedId}`}>{title}</Link>
+            ) : (
+              title
+            )}
+          </h2>
           <p style={completed ? { textDecoration: "line-through" } : undefined}>{description}</p>
           <>
             <p>Priority: {priority}</p>
