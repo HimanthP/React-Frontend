@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-// @customHook
 const useLocalStorage = <T>(
   key: string,
   initialValue: T
@@ -8,7 +7,8 @@ const useLocalStorage = <T>(
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
-      return item !== null ? (JSON.parse(item) as T) : initialValue;
+      if (item === null) return initialValue;
+      return JSON.parse(item) as T;
     } catch {
       return initialValue;
     }
@@ -18,7 +18,7 @@ const useLocalStorage = <T>(
     try {
       window.localStorage.setItem(key, JSON.stringify(storedValue));
     } catch {
-      // ignore
+      // ignore write errors
     }
   }, [key, storedValue]);
 

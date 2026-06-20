@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
+import ErrorBoundary from "./ErrorBoundary";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
@@ -114,20 +115,23 @@ function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStats
 
       {showStatsPanel && <StatsPanel tasks={tasks} />}
 
-      {sortedTasks.length === 0 ? (
-        <div id="filter-empty-message">No tasks found</div>
-      ) : (
-        <TaskList
-          tasks={sortedTasks}
-          onToggle={handleToggle}
-          onDelete={onDelete}
-          countText={`Showing ${sortedTasks.length} of ${tasks.length} tasks`}
-          onUpdateTask={handleUpdateTask}
-          editingId={editingId}
-          setEditingId={setEditingId}
-        />
-      )}
+      <ErrorBoundary>
+        {sortedTasks.length === 0 ? (
+          <div id="filter-empty-message">No tasks found</div>
+        ) : (
+          <TaskList
+            tasks={sortedTasks}
+            onToggle={handleToggle}
+            onDelete={onDelete}
+            countText={`Showing ${sortedTasks.length} of ${tasks.length} tasks`}
+            onUpdateTask={handleUpdateTask}
+            editingId={editingId}
+            setEditingId={setEditingId}
+          />
+        )}
+      </ErrorBoundary>
     </div>
   );
 }
+
 export default React.memo(TaskApp);
