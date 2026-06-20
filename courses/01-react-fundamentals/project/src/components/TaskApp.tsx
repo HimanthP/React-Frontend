@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
@@ -17,7 +17,7 @@ interface TaskAppProps {
   showStatsPanel?: boolean;
 }
 
-export default function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStatsPanel }: TaskAppProps) {
+function TaskApp({ tasks, dispatch, showForm, onDelete, showFilterBar, showStatsPanel }: TaskAppProps) {
   const { theme, toggleTheme } = useTheme();
 
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
@@ -36,43 +36,47 @@ export default function TaskApp({ tasks, dispatch, showForm, onDelete, showFilte
     return () => clearTimeout(timeoutId);
   }, [searchText, debouncedSearchText]);
 
-  function handleAddTask(task: Task) {
+  const handleAddTask = useCallback((task: Task) => {
     dispatch(addTask(task));
-  }
+  }, [dispatch]);
 
-  function handleToggle(id: string | number) {
+  const handleToggle = useCallback((id: string | number) => {
     dispatch(toggleTask(id));
-  }
+  }, [dispatch]);
 
-  function handleUpdateTask(id: string | number, updates: { title: string; description: string; priority: string }) {
+  const handleUpdateTask = useCallback((id: string | number, updates: { title: string; description: string; priority: string }) => {
     if (!updates.title.trim()) return;
     const existing = tasks.find((t) => t.id === id);
     if (!existing) return;
     dispatch(updateTask({ ...existing, ...updates }));
     setEditingId(null);
-  }
+  }, [dispatch, tasks]);
 
-  const statusFiltered =
-    filter === "all" ? tasks : filter === "active" ? tasks.filter((t) => !t.completed) : tasks.filter((t) => t.completed);
+  const handleClearSearch = useCallback(() => setSearchText(""), []);
 
-  const searchedTasks = statusFiltered.filter((task) => {
-    const search = debouncedSearchText.toLowerCase();
-    return task.title.toLowerCase().includes(search) || task.description.toLowerCase().includes(search);
-  });
+  const priorityValue: Record<string, number> = useMemo(() => ({ High: 3, Medium: 2, Low: 1 }), []);
 
-  const priorityValue: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
+  const sortedTasks = useMemo(() => {
+    const statusFiltered =
+      filter === "all" ? tasks : filter === "active" ? tasks.filter((t) => !t.completed) : tasks.filter((t) => t.completed);
 
-  const sortedTasks = [...searchedTasks].sort((a, b) => {
-    if (sortOrder === "high") return priorityValue[b.priority] - priorityValue[a.priority];
-    if (sortOrder === "low") return priorityValue[a.priority] - priorityValue[b.priority];
-    if (sortOrder === "alphabetical") return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
-    if (sortOrder === "dueDate") {
-      const aDate = a.dueDate ? new Date(a.dueDate).getTime() : Number.MAX_SAFE_INTEGER;
-      const bDate = b.dueDate ? new Date(b.dueDate).getTime() : Number.MAX_SAFE_INTEGER;
-      return aDate - bDate;
-    }
-    return 0;
-  });
+    const searched = statusFiltered.filter((task) => {
+      const search = debouncedSearchText.toLowerCase();
+      return task.title.toLowerCase().includes(search) || task.description.toLowerCase().includes(search);
+    });
+
+    return [...searched].sort((a, b) => {
+      if (sortOrder === "high") return priorityValue[b.priority] - priorityValue[a.priority];
+      if (sortOrder === "low") return priorityValue[a.priority] - priorityValue[b.priority];
+      if (sortOrder === "alphabetical") return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+      if (sortOrder === "dueDate") {
+        const aDate = a.dueDate ? new Date(a.dueDate).getTime() : Number.MAX_SAFE_INTEGER;
+        const bDate = b.dueDate ? new Date(b.dueDate).getTime() : Number.MAX_SAFE_INTEGER;
+        return aDate - bDate;
+      }
+      return 0;
+    });
+  }, [tasks, filter, sortOrder, debouncedSearchText, priorityValue]);
 
   return (
     <div
@@ -101,7 +105,7 @@ export default function TaskApp({ tasks, dispatch, showForm, onDelete, showFilte
           onSortChange={setSortOrder}
           searchText={searchText}
           onSearchChange={setSearchText}
-          onClearSearch={() => setSearchText("")}
+          onClearSearch={handleClearSearch}
           isSearching={isSearching}
         />
       )}
@@ -126,3 +130,4 @@ export default function TaskApp({ tasks, dispatch, showForm, onDelete, showFilte
     </div>
   );
 }
+export default React.memo(TaskApp);
