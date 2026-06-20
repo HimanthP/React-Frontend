@@ -233,11 +233,15 @@ export default function TaskCard({
             {description}
           </p>
 
-          <Badge
-            variant={priority.toLowerCase()}
-          >
-            {priority}
-          </Badge>
+          <>
+  <p>Priority: {priority}</p>
+
+  <Badge
+    variant={priority.toLowerCase()}
+  >
+    {priority}
+  </Badge>
+</>
 
           {dueDate && (
             <p id="task-due-date">
