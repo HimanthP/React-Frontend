@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-06-21T08:41:03.072Z",
+  "lastUpdated": "2026-06-21T08:45:56.249Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 28.9,
-    "completionPercentage": 41.5,
+    "overallScore": 29,
+    "completionPercentage": 43.4,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 22
+    "completedChallenges": 23
   },
   "courses": {
     "01-react-fundamentals": {
       "courseId": "01-react-fundamentals",
       "courseName": "React Fundamentals",
-      "averageScore": 87.7,
-      "completionPercentage": 95.7,
+      "averageScore": 87.9,
+      "completionPercentage": 100,
       "badgeLevel": "silver",
       "totalChallenges": 23,
-      "completedChallenges": 22,
+      "completedChallenges": 23,
       "challenges": {
         "01-static-task-display": {
           "challengeId": "01-static-task-display",
@@ -346,6 +346,21 @@
             "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 100,
+            "aiReview": 88
+          }
+        },
+        "23-useref-focus-management": {
+          "challengeId": "23-useref-focus-management",
+          "challengeName": "useRef - Focus Management",
+          "passed": true,
+          "score": 93.205,
+          "lastRun": "2026-06-21T08:45:47.179Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 66.7,
             "aiReview": 88
           }
         }

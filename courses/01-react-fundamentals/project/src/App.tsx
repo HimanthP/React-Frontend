@@ -60,6 +60,7 @@ function AppContent() {
             <Route path="/challenge/21-react-router" element={<TaskApp tasks={memoizedTasks} dispatch={handleDispatch} showForm linkToTaskDetail />} />
             <Route path="/challenge/21-react-router/task/:id" element={<TaskDetailPage />} />
             <Route path="/challenge/22-data-fetching" element={<FetchDemoView />} />
+            <Route path="/challenge/23-useref-focus-management" element={<TaskApp tasks={memoizedTasks} dispatch={handleDispatch} showForm showFilterBar />} />
           </Routes>
         </main>
       </div>
