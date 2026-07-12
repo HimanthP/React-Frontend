@@ -3,14 +3,16 @@ import counterReducer from './slices/counterSlice';
 import uiReducer from './slices/uiSlice';
 import usersReducer from './slices/usersSlice';
 import { apiSlice } from '../api/apiSlice';
+import filtersReducer from "./slices/filtersSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    ui: uiReducer,
-    users: usersReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
-  },
+  counter: counterReducer,
+  ui: uiReducer,
+  users: usersReducer,
+  filters: filtersReducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
+},
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });
