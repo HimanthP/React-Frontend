@@ -1,38 +1,66 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { mockApi } from './mockServer';
-
-// Define the User type
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-}
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { mockApi, type User, type Post } from "./mockServer";
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
-  baseQuery: fetchBaseQuery({
-    baseUrl: '/',
-  }),
+  reducerPath: "api",
+  baseQuery: fetchBaseQuery({ baseUrl: "/" }),
+
+  tagTypes: ["User", "Post"],
+
   endpoints: (builder) => ({
     getUsers: builder.query<User[], void>({
-      queryFn: async () => {
+      queryFn: async () => ({
+        data: await mockApi.getUsers(),
+      }),
+
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "User" as const, id })),
+              { type: "User" as const, id: "LIST" },
+            ]
+          : [{ type: "User" as const, id: "LIST" }],
+    }),
+
+    getPosts: builder.query<Post[], void>({
+      queryFn: async () => ({
+        data: await mockApi.getPosts(),
+      }),
+
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Post" as const, id })),
+              { type: "Post" as const, id: "LIST" },
+            ]
+          : [{ type: "Post" as const, id: "LIST" }],
+    }),
+
+    addPost: builder.mutation<Post, Omit<Post, "id">>({
+      queryFn: async (newPost) => {
         try {
-          const users = await mockApi.getUsers();
-          return { data: users };
-        } catch (error: unknown) {
+          const post = await mockApi.createPost(newPost);
+          return { data: post };
+        } catch (error) {
           return {
             error: {
-              status: 'CUSTOM_ERROR',
-              error:
+              status: "CUSTOM_ERROR",
+              data:
                 error instanceof Error
                   ? error.message
-                  : 'Failed to fetch users',
+                  : "Failed to create post",
             },
           };
         }
       },
+
+      invalidatesTags: [{ type: "Post", id: "LIST" }],
     }),
   }),
 });
 
-export const { useGetUsersQuery } = apiSlice;
+export const {
+  useGetUsersQuery,
+  useGetPostsQuery,
+  useAddPostMutation,
+} = apiSlice;
