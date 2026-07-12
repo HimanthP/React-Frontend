@@ -1,32 +1,20 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { mockApi, type User, type Post } from "./mockServer";
+import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
+import { mockApi, type Post } from "./mockServer";
 
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "/" }),
-
-  tagTypes: ["User", "Post"],
-
+  baseQuery: fakeBaseQuery(),
+  tagTypes: ["Post"],
   endpoints: (builder) => ({
-    getUsers: builder.query<User[], void>({
-      queryFn: async () => ({
-        data: await mockApi.getUsers(),
-      }),
-
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: "User" as const, id })),
-              { type: "User" as const, id: "LIST" },
-            ]
-          : [{ type: "User" as const, id: "LIST" }],
-    }),
-
     getPosts: builder.query<Post[], void>({
-      queryFn: async () => ({
-        data: await mockApi.getPosts(),
-      }),
-
+      async queryFn() {
+        try {
+          const data = await mockApi.getPosts();
+          return { data };
+        } catch (error) {
+          return { error };
+        }
+      },
       providesTags: (result) =>
         result
           ? [
@@ -37,30 +25,23 @@ export const apiSlice = createApi({
     }),
 
     addPost: builder.mutation<Post, Omit<Post, "id">>({
-      queryFn: async (newPost) => {
+      async queryFn(post) {
         try {
-          const post = await mockApi.createPost(newPost);
-          return { data: post };
+          const data = await mockApi.createPost({
+            ...post,
+            userId: 1,
+          });
+          return { data };
         } catch (error) {
-          return {
-            error: {
-              status: "CUSTOM_ERROR",
-              data:
-                error instanceof Error
-                  ? error.message
-                  : "Failed to create post",
-            },
-          };
+          return { error };
         }
       },
-
       invalidatesTags: [{ type: "Post", id: "LIST" }],
     }),
   }),
 });
 
 export const {
-  useGetUsersQuery,
   useGetPostsQuery,
   useAddPostMutation,
 } = apiSlice;

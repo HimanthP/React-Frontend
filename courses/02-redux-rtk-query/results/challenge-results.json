@@ -2486,5 +2486,542 @@
       "overall": "The code meets most of the requirements and demonstrates a good understanding of RTK Query's tag system. However, there are some areas for improvement, such as error handling and network simulation.",
       "requirementCompliance": 95
     }
+  },
+  {
+    "challengeId": "09-mutations",
+    "challengeName": "Mutations with useMutation",
+    "timestamp": "2026-07-12T16:37:53.066Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 86
+    },
+    "totalScore": 82.9,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 09: Mutations with useMutation"
+              ],
+              "fullName": " Challenge 09: Mutations with useMutation API slice has builder.mutation endpoint",
+              "status": "passed",
+              "title": "API slice has builder.mutation endpoint",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 09: Mutations with useMutation"
+              ],
+              "fullName": " Challenge 09: Mutations with useMutation AddPostForm uses useMutation hook",
+              "status": "passed",
+              "title": "AddPostForm uses useMutation hook",
+              "duration": 0,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 09: Mutations with useMutation"
+              ],
+              "fullName": " Challenge 09: Mutations with useMutation AddPostForm has add-post-form and add-post-submit data-testids",
+              "status": "passed",
+              "title": "AddPostForm has add-post-form and add-post-submit data-testids",
+              "duration": 0,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1783874273977,
+          "endTime": 1783874273978,
+          "status": "passed",
+          "message": "",
+          "name": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/challenge-09.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/src/api/apiSlice.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        },
+        {
+          "filePath": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/src/components/AddPostForm.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": [
+            {
+              "ruleId": "no-extra-semi",
+              "replacedBy": []
+            },
+            {
+              "ruleId": "no-mixed-spaces-and-tabs",
+              "replacedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "src/api/apiSlice.ts",
+          "patternsFound": [],
+          "patternsMissing": []
+        },
+        {
+          "file": "src/components/AddPostForm.tsx",
+          "patternsFound": [],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 2,
+      "passedTests": 0,
+      "failedTests": 2,
+      "details": [
+        {
+          "title": "challenge-09.spec.ts",
+          "file": "challenge-09.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 09: Mutations - E2E",
+              "file": "challenge-09.spec.ts",
+              "line": 3,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should load challenge 09 page with AddPostForm",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5324,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 53,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should load challenge 09 page with AddPostForm'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Challenge 09'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-form'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 11 |\u001b[39m   })\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 53,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n\n   7 |\n   8 |   test('should load challenge 09 page with AddPostForm', async ({ page }) => {\n>  9 |     await expect(page.locator('text=Challenge 09')).toBeVisible()\n     |                                                     ^\n  10 |     await expect(page.getByTestId('add-post-form')).toBeVisible()\n  11 |   })\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-12T16:37:56.854Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--5bdd1-ge-09-page-with-AddPostForm-chromium/test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 53,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5165,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 53,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should load challenge 09 page with AddPostForm'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Challenge 09'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-form'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 11 |\u001b[39m   })\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 53,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n\n   7 |\n   8 |   test('should load challenge 09 page with AddPostForm', async ({ page }) => {\n>  9 |     await expect(page.locator('text=Challenge 09')).toBeVisible()\n     |                                                     ^\n  10 |     await expect(page.getByTestId('add-post-form')).toBeVisible()\n  11 |   })\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-12T16:38:03.195Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--5bdd1-ge-09-page-with-AddPostForm-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--5bdd1-ge-09-page-with-AddPostForm-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 53,
+                            "line": 9
+                          }
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5123,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 53,
+                              "line": 9
+                            },
+                            "snippet": "\u001b[0m \u001b[90m  7 |\u001b[39m\n \u001b[90m  8 |\u001b[39m   test(\u001b[32m'should load challenge 09 page with AddPostForm'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Challenge 09'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-form'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 11 |\u001b[39m   })\n \u001b[90m 12 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 53,
+                                "line": 9
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Challenge 09')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Challenge 09')\u001b[22m\n\n\n   7 |\n   8 |   test('should load challenge 09 page with AddPostForm', async ({ page }) => {\n>  9 |     await expect(page.locator('text=Challenge 09')).toBeVisible()\n     |                                                     ^\n  10 |     await expect(page.getByTestId('add-post-form')).toBeVisible()\n  11 |   })\n  12 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:9:53"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-12T16:38:08.920Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--5bdd1-ge-09-page-with-AddPostForm-chromium-retry2/test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 53,
+                            "line": 9
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "a1b04685a79f6082459c-828951cbe0f5663062a7",
+                  "file": "challenge-09.spec.ts",
+                  "line": 8,
+                  "column": 3
+                },
+                {
+                  "title": "should have add post submit button",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5107,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 55,
+                              "line": 14
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'should have add post submit button'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-submit'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m })\n \u001b[90m 17 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 55,
+                                "line": 14
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n\n  12 |\n  13 |   test('should have add post submit button', async ({ page }) => {\n> 14 |     await expect(page.getByTestId('add-post-submit')).toBeVisible()\n     |                                                       ^\n  15 |   })\n  16 | })\n  17 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-12T16:38:14.561Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--2727c-have-add-post-submit-button-chromium/test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 55,
+                            "line": 14
+                          }
+                        },
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5182,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 55,
+                              "line": 14
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'should have add post submit button'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-submit'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m })\n \u001b[90m 17 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 55,
+                                "line": 14
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n\n  12 |\n  13 |   test('should have add post submit button', async ({ page }) => {\n> 14 |     await expect(page.getByTestId('add-post-submit')).toBeVisible()\n     |                                                       ^\n  15 |   })\n  16 | })\n  17 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-12T16:38:20.187Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--2727c-have-add-post-submit-button-chromium-retry1/test-failed-1.png"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--2727c-have-add-post-submit-button-chromium-retry1/trace.zip"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 55,
+                            "line": 14
+                          }
+                        },
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 5119,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55",
+                            "location": {
+                              "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                              "column": 55,
+                              "line": 14
+                            },
+                            "snippet": "\u001b[0m \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'should have add post submit button'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'add-post-submit'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 15 |\u001b[39m   })\n \u001b[90m 16 |\u001b[39m })\n \u001b[90m 17 |\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                                "column": 55,
+                                "line": 14
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('add-post-submit')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('add-post-submit')\u001b[22m\n\n\n  12 |\n  13 |   test('should have add post submit button', async ({ page }) => {\n> 14 |     await expect(page.getByTestId('add-post-submit')).toBeVisible()\n     |                                                       ^\n  15 |   })\n  16 | })\n  17 |\n    at /Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts:14:55"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-12T16:38:25.908Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/test-results/challenge-09-Challenge-09--2727c-have-add-post-submit-button-chromium-retry2/test-failed-1.png"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/himanthputta/Desktop/demo/challenge-engine-react/courses/02-redux-rtk-query/project/tests/e2e/challenge-09.spec.ts",
+                            "column": 55,
+                            "line": 14
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "a1b04685a79f6082459c-d4f659a4cefad71b2896",
+                  "file": "challenge-09.spec.ts",
+                  "line": 13,
+                  "column": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Exit 1"
+    },
+    "aiReviewResults": {
+      "challengeId": "09-mutations",
+      "timestamp": "2026-07-12T16:38:31.156Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct usage of RTK Query and Redux Toolkit",
+        "Proper use of TypeScript types and interfaces",
+        "Logical structure and separation of concerns in code organization"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Consider using a more robust error handling mechanism in the API slice (e.g., using `createAsyncThunk` with error handling)",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "In the `AddPostForm` component, consider using a more robust way to handle form submission (e.g., using `useForm` hook from `react-hook-form`)",
+          "file reference": "src/components/AddPostForm.tsx"
+        },
+        {
+          "specific improvement": "In the `PostsList` component, consider using a more robust way to handle loading and error states (e.g., using `useSelector` to get the loading and error states from the store)",
+          "file reference": "src/components/PostsList.tsx"
+        }
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the functional requirements and follows RTK Query best practices. However, there are some areas for improvement, such as error handling and code organization.",
+      "requirementCompliance": 90
+    },
+    "aiResults": {
+      "challengeId": "09-mutations",
+      "timestamp": "2026-07-12T16:38:31.156Z",
+      "score": 86,
+      "feedback": [],
+      "strengths": [
+        "Correct usage of RTK Query and Redux Toolkit",
+        "Proper use of TypeScript types and interfaces",
+        "Logical structure and separation of concerns in code organization"
+      ],
+      "improvements": [
+        {
+          "specific improvement": "Consider using a more robust error handling mechanism in the API slice (e.g., using `createAsyncThunk` with error handling)",
+          "file reference": "src/api/apiSlice.ts"
+        },
+        {
+          "specific improvement": "In the `AddPostForm` component, consider using a more robust way to handle form submission (e.g., using `useForm` hook from `react-hook-form`)",
+          "file reference": "src/components/AddPostForm.tsx"
+        },
+        {
+          "specific improvement": "In the `PostsList` component, consider using a more robust way to handle loading and error states (e.g., using `useSelector` to get the loading and error states from the store)",
+          "file reference": "src/components/PostsList.tsx"
+        }
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code meets most of the functional requirements and follows RTK Query best practices. However, there are some areas for improvement, such as error handling and code organization.",
+      "requirementCompliance": 90
+    }
   }
 ]
