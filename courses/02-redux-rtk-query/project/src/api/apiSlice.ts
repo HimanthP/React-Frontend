@@ -1,14 +1,36 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { mockApi, type User } from "./mockServer";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { mockApi } from './mockServer';
+
+// Define the User type
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+}
 
 export const apiSlice = createApi({
-  reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "/" }),
+  reducerPath: 'api',
+  baseQuery: fetchBaseQuery({
+    baseUrl: '/',
+  }),
   endpoints: (builder) => ({
     getUsers: builder.query<User[], void>({
-      queryFn: async () => ({
-        data: await mockApi.getUsers(),
-      }),
+      queryFn: async () => {
+        try {
+          const users = await mockApi.getUsers();
+          return { data: users };
+        } catch (error: unknown) {
+          return {
+            error: {
+              status: 'CUSTOM_ERROR',
+              error:
+                error instanceof Error
+                  ? error.message
+                  : 'Failed to fetch users',
+            },
+          };
+        }
+      },
     }),
   }),
 });
