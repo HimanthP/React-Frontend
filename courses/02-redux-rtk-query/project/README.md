@@ -57,12 +57,12 @@ npm run review -- --challenge=01-store-setup
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 7/12/2026, 11:32:01 AM*
+*Auto-updated when you run review. Last run: 7/12/2026, 11:36:38 AM*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 4 / 13 (30.8%) |
-| Average score | 95.7% |
+| Challenges completed | 5 / 13 (38.5%) |
+| Average score | 95.6% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -70,7 +70,7 @@ npm run review -- --challenge=01-store-setup
 | First Slice with createSlice | Redux Toolkit, createSlice, reducers, actions | Passed |
 | Reading and Dispatching in Components | React-Redux, useSelector, useDispatch, typed hooks | Passed |
 | Multiple Slices in the Store | Redux, multiple reducers, slice per domain | Passed |
-| Async Logic with createAsyncThunk | Redux Toolkit, createAsyncThunk, extraReducers, pending/fulfilled/rejected | — |
+| Async Logic with createAsyncThunk | Redux Toolkit, createAsyncThunk, extraReducers, pending/fulfilled/rejected | Passed |
 | RTK Query Setup and API Slice | RTK Query, createApi, fetchBaseQuery, API reducer and middleware | — |
 | Query Endpoints and useQuery Hooks | RTK Query, useGetUsersQuery, loading, error, data | — |
 | Caching and Cache Tags | RTK Query, providesTags, invalidatesTags, cache invalidation | — |
