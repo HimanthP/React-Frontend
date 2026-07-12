@@ -25,19 +25,36 @@ export const apiSlice = createApi({
     }),
 
     addPost: builder.mutation<Post, Omit<Post, "id">>({
-      async queryFn(post) {
-        try {
-          const data = await mockApi.createPost({
-            ...post,
+  query: (body) => ({
+    url: "/posts",
+    method: "POST",
+    body,
+  }),
+
+  async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+    const patchResult = dispatch(
+      apiSlice.util.updateQueryData(
+        "getPosts",
+        undefined,
+        (draft) => {
+          draft.push({
+            id: Date.now(),
             userId: 1,
+            ...arg,
           });
-          return { data };
-        } catch (error) {
-          return { error };
         }
-      },
-      invalidatesTags: [{ type: "Post", id: "LIST" }],
-    }),
+      )
+    );
+
+    try {
+      await queryFulfilled;
+    } catch {
+      patchResult.undo();
+    }
+  },
+
+  invalidatesTags: [{ type: "Post", id: "LIST" }],
+}),
   }),
 });
 

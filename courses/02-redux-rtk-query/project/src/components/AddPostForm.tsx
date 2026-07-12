@@ -13,9 +13,10 @@ export default function AddPostForm() {
     if (!title.trim() || !body.trim()) return;
 
     await addPost({
-      title,
-      body,
-    }).unwrap();
+  userId: 1,
+  title,
+  body,
+}).unwrap();
 
     setTitle("");
     setBody("");
